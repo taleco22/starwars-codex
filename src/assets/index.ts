@@ -3,6 +3,8 @@ export const video = {
 }
 
 export const audio = {
+  lightsaberMoveMP3: require("./audio/sfx/lightsaber-move.mp3"),
+  lightsaberMoveOGG: require("./audio/sfx/lightsaber-move.ogg"),
   lightsaberMP3: require("./audio/sfx/lightsaber.mp3"),
   lightsaberOGG: require("./audio/sfx/lightsaber.ogg"),
   mp3: require("./audio/starwars.mp3"),

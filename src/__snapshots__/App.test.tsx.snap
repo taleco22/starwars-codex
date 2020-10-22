@@ -117,12 +117,10 @@ exports[`<App /> render 1`] = `
     loop=""
   >
     <source
-      id="ogg"
       src="starwars.ogg"
       type="audio/ogg"
     />
     <source
-      id="mp3"
       src="starwars.mp3"
       type="audio/mpeg"
     />
@@ -131,12 +129,10 @@ exports[`<App /> render 1`] = `
     id="lightsaberSound"
   >
     <source
-      id="ogg"
       src="lightsaber.ogg"
       type="audio/ogg"
     />
     <source
-      id="mp3"
       src="lightsaber.mp3"
       type="audio/mpeg"
     />
@@ -149,6 +145,18 @@ exports[`<App /> render 1`] = `
       type="video/mp4; codecs=\\"avc1.42E01E, mp4a.40.2\\""
     />
   </video>
+  <audio
+    id="lightsaberMove"
+  >
+    <source
+      src="lightsaber-move.ogg"
+      type="audio/ogg"
+    />
+    <source
+      src="lightsaber-move.mp3"
+      type="audio/mpeg"
+    />
+  </audio>
   <div
     class="c0 layer1"
   />

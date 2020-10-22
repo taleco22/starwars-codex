@@ -7,12 +7,10 @@ Array [
     loop={true}
   >
     <source
-      id="ogg"
       src="starwars.ogg"
       type="audio/ogg"
     />
     <source
-      id="mp3"
       src="starwars.mp3"
       type="audio/mpeg"
     />
@@ -21,12 +19,10 @@ Array [
     id="lightsaberSound"
   >
     <source
-      id="ogg"
       src="lightsaber.ogg"
       type="audio/ogg"
     />
     <source
-      id="mp3"
       src="lightsaber.mp3"
       type="audio/mpeg"
     />
@@ -39,6 +35,18 @@ Array [
       type="video/mp4; codecs=\\"avc1.42E01E, mp4a.40.2\\""
     />
   </video>,
+  <audio
+    id="lightsaberMove"
+  >
+    <source
+      src="lightsaber-move.ogg"
+      type="audio/ogg"
+    />
+    <source
+      src="lightsaber-move.mp3"
+      type="audio/mpeg"
+    />
+  </audio>,
   <div
     className="sc-AxhUy fTiWoS layer1"
   />,

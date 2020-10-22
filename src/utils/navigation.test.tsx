@@ -5,6 +5,7 @@ import "../setupTest"
 import {
   getNodeListOfButtons,
   initNavigation,
+  playLightSaberOnKeyUp,
   togglePreviewAttribute,
   updateActiveButtonOnKeyUp,
   updateActiveButtonOnPoint,
@@ -12,7 +13,7 @@ import {
 
 describe("Utils", () => {
   describe("Navigation", () => {
-    let mockPreview: jest.Mock
+    let mockPreview: jest.Mock<ChildNode, []>
     let list_of_buttons: NodeListOf<HTMLButtonElement>
     let up_arrow: { keyCode: number }
     let down_arrow: { keyCode: number }
@@ -275,6 +276,32 @@ describe("Utils", () => {
 
         expect(list_of_buttons[1]).toHaveFocus()
       })
+    })
+  })
+
+  describe("playLightsaberOnKeyUp()", () => {
+    beforeAll(() => {
+      document.body.innerHTML = `<div><audio id="lightsaberMove"></audio></div>`
+    })
+
+    it("play sound", () => {
+      const { audio } = playLightSaberOnKeyUp()
+      expect(audio).toHaveClass("play")
+    })
+
+    it("remove class on ended event", () => {
+      const { audio } = playLightSaberOnKeyUp()
+
+      audio && fireEvent.ended(audio)
+
+      expect(audio).not.toHaveClass("play")
+    })
+
+    it("audio is null", () => {
+      document.body.innerHTML = ""
+      const { audio } = playLightSaberOnKeyUp()
+
+      expect(audio).toBeNull()
     })
   })
 })

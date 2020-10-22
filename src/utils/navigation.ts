@@ -1,3 +1,29 @@
+export const playLightSaberOnKeyUp = () => {
+  const audio: HTMLMediaElement | null = document.querySelector(
+    "#lightsaberMove",
+  )
+
+  if (audio?.classList.contains("play")) {
+    const isPlaying =
+      audio.currentTime > 0 &&
+      !audio.paused &&
+      !audio.ended &&
+      audio.readyState > 2
+
+    if (!isPlaying) {
+      return { audio }
+    }
+    audio.pause()
+    audio.currentTime = 0
+  }
+
+  audio?.classList.add("play")
+  audio?.play()
+  audio?.addEventListener("ended", () => audio.classList.remove("play"))
+
+  return { audio }
+}
+
 export const togglePreviewAttribute = (
   btn: NodeListOf<HTMLButtonElement>,
 ): ChildNode | null | undefined => {
@@ -34,9 +60,11 @@ export const updateActiveButtonOnKeyUp = (
   if (ev.keyCode === 38 && index > 0) {
     index -= 1
     btn[index].focus()
+    playLightSaberOnKeyUp()
   } else if (ev.keyCode === 40 && index < btn.length - 1) {
     index += 1
     btn[index].focus()
+    playLightSaberOnKeyUp()
   } else {
     return index
   }

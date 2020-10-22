@@ -7,6 +7,7 @@ context("Subjects Page", () => {
 
   it("Changes focused button", () => {
     hasFocus("Tatooine").next().children().should("have.length", 7)
+    cy.wait(100)
     goDown()
     hasFocus("Alderaan")
       .next()

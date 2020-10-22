@@ -15,18 +15,23 @@ const App: React.FC = () => {
     const soundTrack: HTMLMediaElement | null = document.querySelector("#theme")
     soundTrack?.load()
     soundTrack?.play()
+
+    const audio: HTMLMediaElement | null = document.querySelector(
+      "#lightsaberMove",
+    )
+    audio?.load()
   }, [])
 
   return (
     <BrowserRouter>
       <audio loop id="theme">
-        <source id="ogg" src={audio.ogg} type="audio/ogg" />
-        <source id="mp3" src={audio.mp3} type="audio/mpeg" />
+        <source src={audio.ogg} type="audio/ogg" />
+        <source src={audio.mp3} type="audio/mpeg" />
       </audio>
 
       <audio id="lightsaberSound">
-        <source id="ogg" src={audio.lightsaberOGG} type="audio/ogg" />
-        <source id="mp3" src={audio.lightsaberMP3} type="audio/mpeg" />
+        <source src={audio.lightsaberOGG} type="audio/ogg" />
+        <source src={audio.lightsaberMP3} type="audio/mpeg" />
       </audio>
 
       <video id="lightsaberVideo">
@@ -35,6 +40,11 @@ const App: React.FC = () => {
           type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
         />
       </video>
+
+      <audio id="lightsaberMove">
+        <source src={audio.lightsaberMoveOGG} type="audio/ogg" />
+        <source src={audio.lightsaberMoveMP3} type="audio/mpeg" />
+      </audio>
 
       <Stars />
 
